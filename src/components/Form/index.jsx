@@ -5,21 +5,22 @@ export class Form extends Component {
         name: '',
         phone: ''
       }
-      reset = () => {
-        this.setState({name: '', phone: ''})
+    reset = () => {
+        this.setState({name: '',
+        phone: ''})
     }
 
       handleSubmit = (e) => {
 		e.preventDefault()
         this.props.addContact(this.state)
         this.reset()
-        console.log(this.state.contacts);
-        
 	}
     handleChange = evt => {
         this.setState({[evt.currentTarget.name]:evt.currentTarget.value})
         
     }
+
+    
     
 
 

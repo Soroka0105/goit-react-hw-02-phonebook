@@ -30,17 +30,12 @@ getVisibleContacts = () => {
 }
 
   addContact = (newContact) => {
-    // const newAlert = () => Alert.alert("ahtung")
-    const newName = newContact.name
-    console.log(newContact);
+    const equalName = this.state.contacts.find(element => element.name.toLowerCase() === newContact.name.toLowerCase())
     const addContactObj = {
       ...newContact,
       id: nanoid()
     }
-    console.log(newName);
-    this.state.contacts.forEach(contact => 
-      contact.name.toLowerCase() === newName.toLowerCase()) ? console.log('yes'):console.log('no');
-
+if (equalName) return alert(`${equalName.name} is already in contacts`)
 
 this.setState((prev) =>(
   {contacts: [...prev.contacts, addContactObj]}

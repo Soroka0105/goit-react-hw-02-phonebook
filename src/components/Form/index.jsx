@@ -28,8 +28,8 @@ export class Form extends Component {
         
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name='name' onChange={this.handleChange} required />
-                <input type="tel" name='phone' onChange={this.handleChange}/>
+                <input value={this.state.name} type="text" name='name' onChange={this.handleChange} required />
+                <input value={this.state.phone} type="tel" name='phone' onChange={this.handleChange} required/>
                 <button type='submit'>Add Contact</button>
             </form>
         )
